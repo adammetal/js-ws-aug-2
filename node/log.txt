@@ -1,0 +1,4 @@
+GET /log
+GET /log
+POST /log 16
+POST /log 27
