@@ -6,6 +6,8 @@ const stream = fs.createWriteStream("./log.txt", { flags: "a" });
 const server = http.createServer((req, res) => {
   const { method, url } = req;
 
+  console.log(method, url);
+
   let body = "";
   req.on("data", (data) => {
     body += data;

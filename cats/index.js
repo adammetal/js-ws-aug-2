@@ -24,11 +24,11 @@ const loadingEnd = () => {
 };
 
 const fetchCat = async () => {
-  const response = await fetch(url);
-  const cat = (await response.json())[0];
+  const res = await fetch(url);
+  const cats = await res.json();
+  const cat = cats[0];
 
   await preloadImage(cat.url);
-
   return cat;
 };
 
@@ -37,7 +37,6 @@ const displayCatFromApi = () => {
 
   fetchCat().then((cat) => {
     loadingEnd();
-    // cat is undefined
     drawCat(cat);
   });
 };
